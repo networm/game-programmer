@@ -18,6 +18,26 @@
 * [Ghostscript](http://www.ghostscript.com/) 9.16 (ps2pdf)
 * [cpdf](http://community.coherentpdf.com/)
 
+### Ubuntu 18.04
+
+```
+sudo apt install graphviz
+wget https://github.com/coherentgraphics/cpdf-binaries/raw/master/Linux-Intel-64bit/cpdf
+sudo mv cpdf /usr/local/bin
+
+cd game-programmer
+make clean
+make
+```
+
+### macOS Mojave
+
+Dot in graphviz has caught exception when execute.
+
+According to [macos - Graphviz crashes on Mac during render using Quartz - Stack Overflow](https://stackoverflow.com/questions/48383874/graphviz-crashes-on-mac-during-render-using-quartz), it seems that graphviz didn't install with pango. The accepted answer said that it should works after installed with `brew reinstall graphviz --with-pango`, brew will set everything up for you.
+
+But till 2018/10/21 it didn't works.
+
 ## Acknowledgement
 
 * Windy Wang
